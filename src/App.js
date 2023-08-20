@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
+import Weather from './components/Weather';
 
 function App() {
+  const [coordinates, setCoordinates] = useState(null);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      setCoordinates({ latitude: position.coords.latitude, longitude: position.coords.longitude });
+    });
+  }, []);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Weather coordinates={coordinates} />
     </div>
   );
 }
