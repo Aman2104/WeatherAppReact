@@ -9,7 +9,7 @@ function DailyWeather({ date, maxTemp, minTemp, sunrise, sunset, rainSum }) {
     return (
         <div className="weather-day">
             <div className="date">{date}</div>
-            <div className="temperature">
+            <div className="temperatureDiff">
                 <span>Max: {maxTemp}°C</span>
                 <span>Min: {minTemp}°C</span>
             </div>

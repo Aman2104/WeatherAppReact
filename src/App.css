@@ -200,9 +200,10 @@ p {
     margin-bottom: 10px;
 }
 
-.temperature {
+.temperatureDiff {
     display: flex;
     justify-content: space-between;
+    font-size: 1.1rem;
     margin-bottom: 8px;
 }
 
